@@ -3,8 +3,8 @@ import { ITVShowEpisode } from "../types"
 import { StyledLink } from "../shared/StyledLink";
 
 interface IProps {
-    episode: ITVShowEpisode;
-    image: string | null;
+	episode: ITVShowEpisode;
+	image: string | null;
 }
 
 export default function EpisodeListItem(props: IProps){
