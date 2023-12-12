@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { Provider } from 'react-redux';
-import { setupStore } from './store';
+import { store } from './store';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -20,8 +20,6 @@ const router = createBrowserRouter([
     element: <TVShow />
   }
 ]);
-
-const store = setupStore();
 
 ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement)
