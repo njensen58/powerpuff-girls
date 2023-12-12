@@ -23,7 +23,7 @@ export default function TVShow() {
   }, [getTVShow]);
 
   return (
-    <x.div display="flex" flexDirection="column" margin={8}>
+    <x.div display="flex" flexDirection="column" padding={8} bg="black">
       <ShowDisplay
         name={show.name}
         summary={show.summary}

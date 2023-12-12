@@ -11,7 +11,13 @@ interface ILinkProps extends PropsWithChildren {
 
 export function StyledLink(props: ILinkProps){
     return (
-        <x.div display="flex">
+        <x.div 
+					display="flex" 
+					justifySelf="end" 
+					bg="white" 
+					padding={2}
+					borderRadius="md"
+				>
             <Link to={props.to} state={props.state}>{props.text}</Link>
         </x.div>
     )
