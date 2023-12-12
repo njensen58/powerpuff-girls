@@ -12,4 +12,6 @@ export interface ITVShowResponse {
 
 export interface ITVShowEpisode extends ITVShowResponse {
     id: string;
+    season: number;
+    number: number;
 };
