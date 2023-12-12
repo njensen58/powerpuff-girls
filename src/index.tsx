@@ -8,7 +8,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from './App';
-import TVShow from './pages/TVShow';
+import Episode from './pages/Episode';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "powerpuff-girls",
-    element: <TVShow />
+    path: "episode/:id" ,
+    element: <Episode />
   }
 ]);
 
