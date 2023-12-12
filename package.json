@@ -17,14 +17,12 @@
     "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "redux": "^5.0.0",
-    "save-dev": "^0.0.1-security",
     "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "lint:fix": "lint-staged"
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -39,9 +37,9 @@
     }
   },
   "lint-staged": {
-      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-        "prettier --write"
-      ]
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [
