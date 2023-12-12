@@ -8,10 +8,11 @@ export default function Episode(){
     const episodes = useSelector<RootState, ITVShowEpisode[]>((state) => state.tvShow.episodes);
     
     const selected = episodes.find(e => e.id === location.state.episodeID);
+		
     if(!selected){
         return <div></div>
     }
-    
+
     return (
         <div>  
             <Link to="/">Go Back</Link>
