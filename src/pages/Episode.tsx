@@ -20,17 +20,17 @@ export default function Episode(){
 
     return (
         <>
-        <x.div bg="black" padding={8}>  
-            <x.div marginBottom={8}>            
-                <StyledLink to="/" text="Go Back"/>
+            <x.div bg="black" padding={8}>  
+                <x.div marginBottom={8}>            
+                    <StyledLink to="/" text="Go Back"/>
+                </x.div>
+                <x.div display="flex">
+                    <ShowDisplay name={selected.name} summary={selected.summary} imgUrl={image}/>
+                </x.div>
+            
             </x.div>
-            <x.div display="flex">
-                <ShowDisplay name={selected.name} summary={selected.summary} imgUrl={image}/>
+            <x.div bg="black" display="flex" minHeight="50vh">
             </x.div>
-           
-        </x.div>
-        <x.div bg="black" display="flex" minHeight="50vh">
-        </x.div>
         </>
     )
 }
