@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../utils/test-utils';
 import App from '../App';
 
 test('renders hello world', () => {
-  render(<App />);
+  renderWithProviders(<App />);
   const headerElement = screen.getByText(/hello world/i);
   expect(headerElement).toBeInTheDocument();
 });
