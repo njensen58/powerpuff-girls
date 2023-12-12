@@ -42,7 +42,7 @@ export const tvShowSlice = createSliceWithThunks({
                     const {name, summary, image, _embedded} = action.payload as ITVShowResponse;
                     state.name = name;
                     state.summary = summary;
-                    state.imgUrl = image.medium;
+                    state.imgUrl = image.original;
                     state.episodes = _embedded.episodes;
                 },
             }

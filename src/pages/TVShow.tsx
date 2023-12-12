@@ -6,6 +6,7 @@ import { TVShowState } from "../store/tvShowSlice";
 import { fetchTVShow } from "../store/tvShowSlice";
 import ShowDisplay from "../components/ShowDisplay";
 import EpisodeList from "../components/EpisodeList";
+import { x } from "@xstyled/styled-components";
 
 export default function TVShow() {
   const dispatch = useAppDispatch();
@@ -22,13 +23,13 @@ export default function TVShow() {
   }, [getTVShow]);
 
   return (
-    <>
+    <x.div display="flex" flexDirection="column" padding={8} bg="black">
       <ShowDisplay
         name={show.name}
         summary={show.summary}
         imgUrl={show.imgUrl}
       />
-      <EpisodeList episodes={show.episodes} />
-    </>
+      <EpisodeList />
+    </x.div>
   );
 }

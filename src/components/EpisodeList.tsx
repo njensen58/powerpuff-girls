@@ -1,28 +1,26 @@
-import { ITVShowEpisode } from "../types";
-import { Link } from "react-router-dom";
+import { x } from "@xstyled/styled-components";
+import EpisodeListItem from "./EpisodeListItem";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { TVShowState } from "../store/tvShowSlice";
 
-interface IProps {
-  episodes: ITVShowEpisode[];
-}
 
-export default function EpisodeList(props: IProps) {
+export default function EpisodeList() {
+  const show = useSelector<RootState, TVShowState>((state) => state.tvShow);
+
   return (
-    <div>
-      {props.episodes.map((episode) => {
-        let image = episode?.image?.original || episode?.image?.medium;
+    <x.div marginTop={8} width={'100%'}>
+      {show.episodes.map((episode) => {
+        let image = episode?.image?.original || episode?.image?.medium || show.imgUrl;
+        
         return (
-          <div key={episode.name}>
-            <p>Title: {episode.name}</p>
-            <p>Season: {episode.season}</p>
-            <p>Episode: {episode.number}</p>
-            {image && <img src={image} alt={episode.name} width={200}/>}
-            <Link 
-                to={`episode/${episode.id}`} 
-                state={{episodeID: episode.id}}>
-                See Episode Details
-            </Link>
-         </div>
-      )})}
-    </div>
+          <EpisodeListItem 
+            episode={episode} 
+            image={image} 
+            key={episode.name}
+          />
+        )  
+      })}
+    </x.div>
   );
 }

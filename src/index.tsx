@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import {
+  ThemeProvider,
+  Preflight,
+} from '@xstyled/styled-components'
 import App from './App';
 import Episode from './pages/Episode';
+import { defaultTheme } from '@xstyled/styled-components';
+import SiteHeader from './components/SiteHeader';
+
+const theme = defaultTheme;
 
 const router = createBrowserRouter([
   {
@@ -26,7 +33,11 @@ ReactDOM.createRoot(
   .render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <ThemeProvider theme={theme}>
+        <Preflight />
+        <SiteHeader />
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
