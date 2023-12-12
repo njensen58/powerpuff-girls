@@ -16,7 +16,7 @@ export default function EpisodeListItem(props: IProps){
 			alignItems="center"
 			marginTop={4}
 			marginBottom={4}
-			width={{_: 'auto', sm: 400, md: 700}}
+			maxWidth={"1080px"}
 		>
 			{image && <x.img src={image} alt={episode.name} width={100}/>}
 			<x.div marginLeft={4}>

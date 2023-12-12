@@ -29,7 +29,7 @@ export default function TVShow() {
         summary={show.summary}
         imgUrl={show.imgUrl}
       />
-      <EpisodeList episodes={show.episodes} />
+      <EpisodeList />
     </x.div>
   );
 }

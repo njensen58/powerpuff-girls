@@ -13,8 +13,13 @@ export default function ShowDisplay(props: IProps) {
       color="white" 
       flexDirection={{_: 'column', sm: 'column', md: 'row'}}
     >
-      <x.div marginRight={8}>
-        <x.img src={props.imgUrl} alt={props.name} />
+      <x.div 
+        marginRight={8} 
+        display={{xs: "flex", sm: 'flex'}} 
+        justifyContent={{xs: "center", sm: 'center'}}
+        marginBottom={{xs: 4, sm: 4}}
+      >
+        <x.img src={props.imgUrl} alt={props.name} maxWidth={300} />
       </x.div>
       <x.div>
         <x.h2 fontSize={24} marginBottom={4}>{props.name}</x.h2>
