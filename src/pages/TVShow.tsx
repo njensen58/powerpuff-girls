@@ -24,6 +24,12 @@ export default function TVShow(){
 			<h2>Title: {show.name}</h2>
 			<div dangerouslySetInnerHTML={{__html: show.summary}}></div>
 			<img src={show.imgUrl} alt="Powerpuff Girls"/>
+			{show.episodes.map(episode => (
+				<div>
+					<p>Title: {episode.name}</p>
+					<p dangerouslySetInnerHTML={{__html: episode.summary}} />
+				</div>
+			))}
 		</>
 	);
 }

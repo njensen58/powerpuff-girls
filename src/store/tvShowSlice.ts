@@ -1,10 +1,11 @@
 import { createSliceWithThunks } from "../utils/createSliceWithThunks";
-import { ITVShowResponse } from "../types";
+import { ITVShowEpisode, ITVShowResponse } from "../types";
 
 export type TVShowState = {
     name: string;
     summary: string;
     imgUrl: string;
+    episodes: ITVShowEpisode[];
     isLoading: boolean;
     errorMsg: string;
 }
@@ -13,6 +14,7 @@ const initialState: TVShowState = {
     name: "",
     summary: "",
     imgUrl: "",
+    episodes: [],
     isLoading: false,
     errorMsg: "",
 };
@@ -23,7 +25,7 @@ export const tvShowSlice = createSliceWithThunks({
     reducers: (create) => ({
         fetchTVShow: create.asyncThunk(
             async (tvShow: string) => {
-                const response = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${tvShow}`);
+                const response = await fetch(`https://api.tvmaze.com/singlesearch/shows?q=${tvShow}&embed=episodes`);
                 const data = await response.json();
                 return data;
             },
@@ -37,10 +39,11 @@ export const tvShowSlice = createSliceWithThunks({
                 },
                 fulfilled: (state, action) => {
                   state.isLoading = false;
-                    const {name, summary, image} = action.payload as ITVShowResponse;
+                    const {name, summary, image, _embedded} = action.payload as ITVShowResponse;
                     state.name = name;
                     state.summary = summary;
                     state.imgUrl = image.medium;
+                    state.episodes = _embedded.episodes;
                 },
             }
         )
