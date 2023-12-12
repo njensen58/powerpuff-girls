@@ -10,6 +10,7 @@ export default function TVShow(){
 	const show = useSelector<RootState, TVShowState>((state) => state.tvShow);
 	
 	const getTVShow = useCallback(
+        // hardcoded-string for project, but easily replacable by dynamic text to fetch any tv show.
 		() => dispatch(fetchTVShow("powerpuff+girls")),
 		[dispatch]
 	)
@@ -23,7 +24,7 @@ export default function TVShow(){
 			<h1>TV Show Page</h1>
 			<h2>Title: {show.name}</h2>
 			<div dangerouslySetInnerHTML={{__html: show.summary}}></div>
-			<img src={show.imgUrl} alt="Powerpuff Girls"/>
+			<img src={show.imgUrl} alt={show.name}/>
 			{show.episodes.map(episode => (
 				<div>
 					<p>Title: {episode.name}</p>
