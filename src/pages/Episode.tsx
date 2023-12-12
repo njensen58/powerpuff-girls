@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { RootState } from "../store";
 import { ITVShowEpisode } from "../types";
+import { StyledLink } from "../shared/StyledLink";
 
 export default function Episode(){
     let location = useLocation();
@@ -15,7 +16,7 @@ export default function Episode(){
 
     return (
         <div>  
-            <Link to="/">Go Back</Link>
+            <StyledLink to="/" text="Go Back"/>
             <h1>{selected.name}</h1>
             <img src={selected.image.original} alt={selected.name} width={200}/>
             <p dangerouslySetInnerHTML={{ __html: selected.summary }} /> 
