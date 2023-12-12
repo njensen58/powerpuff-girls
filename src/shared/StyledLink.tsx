@@ -10,16 +10,15 @@ interface ILinkProps extends PropsWithChildren {
 
 export function StyledLink(props: ILinkProps){
 	return (
-		<x.div 
-					display="flex" 
-					justifyContent="center"
-					bg="#81CB71" 
-					padding={2}
-					borderRadius="md"
-					borderColor="black"
-					borderWidth={1}
-					marginLeft="auto"
-				>
+		<x.div
+			display="flex"
+			justifyContent="center"
+			bg="#81CB71"
+			padding={2}
+			borderRadius="md"
+			borderColor="black"
+			borderWidth={1}
+			marginLeft="auto">
 			<Link to={props.to} state={props.state}>{props.text}</Link>
 		</x.div>
 	)

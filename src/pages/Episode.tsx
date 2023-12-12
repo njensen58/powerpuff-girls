@@ -11,7 +11,7 @@ export default function Episode(){
 	const show = useSelector<RootState, TVShowState>((state) => state.tvShow);
 
 	const selected = show.episodes.find(e => e.id === location.state.episodeID);
-	
+
 	if(!selected){
 			return <div></div>
 	}
@@ -20,8 +20,8 @@ export default function Episode(){
 
 	return (
 		<>
-			<x.div bg="black" padding={8}>  
-				<x.div marginBottom={8}>            
+			<x.div bg="black" padding={8}>
+				<x.div marginBottom={8}>
 						<StyledLink to="/" text="Go Back"/>
 				</x.div>
 				<x.div display="flex">
