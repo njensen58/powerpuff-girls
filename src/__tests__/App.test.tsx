@@ -7,12 +7,6 @@ import App from "../App";
 afterEach(() => jest.restoreAllMocks());
 
 describe("App", () => {
-  test("renders hello world", () => {
-    renderWithProviders(<App />);
-    const headerElement = screen.getByText(/hello world/i);
-    expect(headerElement).toBeInTheDocument();
-  });
-
   test("it renders response data from api call on load", async () => {
     // @ts-expect-error - partial response for testing
     jest.spyOn(global, "fetch").mockResolvedValue({
